@@ -11,7 +11,7 @@ class TestAPIs(unittest.TestCase):
         self.assertEqual(repo_info('richkempinski1'), 'User Not Found')
     
     def testRepoCommits(self):
-        self.assertEqual(repo_info('WilliamBaltus'), "Repos: 10 Commits: 80")
+        self.assertEqual(repo_info('WilliamBaltus'), "Repos: 10 Commits: 83")
 
 if __name__ == '__main__':
     print('Running unit tests')
