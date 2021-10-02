@@ -12,14 +12,19 @@ def repo_info(username):
         if (counter == 2):
             return "User Not Found"
 
+        repoAmount = 0  
+        commitTotal = 0
         for json in repoJson:
-            counter = 0
+            commitsAmount = 0
             print("Repository Name: " + json['name'])
+            repoAmount += 1
             commits = "https://api.github.com/repos/" + username + "/" + json['name'] + "/commits"
             commitJson = requests.get(commits).json()
             for json in commitJson:
-                counter = counter + 1
-            print("Commits: " + str(counter))
+                commitsAmount = commitsAmount + 1
+            print("Commits: " + str(commitsAmount))
+            commitTotal = commitTotal + commitsAmount
+        return "Repos: " + str(repoAmount) + " Commits: " + str(commitTotal)
     else: 
         return "Invalid User Format"
 
